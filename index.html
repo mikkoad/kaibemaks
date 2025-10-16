@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Käibemaksukalkulaator</title>
     <script>
-        alert("tere, inimene!");
+        function arvutus(){
+            let hind = document.getElementById("hind").value;
+            let kmaksp = document.getElementById("maks").value / 100;
+            let kmakssuurus = hind * kmaksp;
+            let tootehind = parseInt(hind) + parseInt(kmakssuurus);
+            document.getElementById("kmakssuurus").innerHTML = kmakssuurus;
+            document.getElementById("tootehind").innerHTML = tootehind;
+        }
     </script>
 </head>
 <body>
@@ -22,7 +29,10 @@
         <option value="28">28</option>
     </select>
 
-    <input type="button" value="Arvuta">
+    <input type="button" value="Arvuta" onclick="arvutus()">
+
+    <p id="kmakssuurus"></p>
+    <p id="tootehind"></p>
 
 </body>
 </html>
